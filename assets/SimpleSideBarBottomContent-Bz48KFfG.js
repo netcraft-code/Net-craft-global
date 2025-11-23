@@ -1,0 +1,1 @@
+import{K as e,j as s}from"./index-BtdeMlsq.js";import{U as n,c as o}from"./UserPopOver-D4A7OG1T.js";import{I as r}from"./AuthorityCheck-DAMhDgoO.js";function l(){const{signOut:t}=e();return s.jsxs(s.Fragment,{children:[s.jsx(n,{}),s.jsxs("div",{className:o.link,onClick:i=>{t()},children:[s.jsx(r,{className:o.icon}),s.jsx("span",{children:"Exit"})]})]})}export{l as S};

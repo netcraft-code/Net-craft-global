@@ -1,0 +1,1 @@
+import{j as r}from"./index-BtdeMlsq.js";import{T as e}from"./Title-CTucovP5.js";import{T as o}from"./Text-DLRBVNmf.js";function s(){return r.jsxs("div",{children:[r.jsx(e,{order:2,children:"Home"}),r.jsx(o,{mt:"md",children:"Welcome"})]})}export{s as default};

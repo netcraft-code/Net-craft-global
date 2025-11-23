@@ -1,0 +1,1 @@
+import{j as e,B as t}from"./index-BtdeMlsq.js";import{V as o}from"./Views-DLv2rNDM.js";function r(){return e.jsx(t,{bg:"#ececec",style:{overflowX:"hidden",height:"100vh",display:"flex",justifyContent:"center"},p:"xl",children:e.jsx(o,{})})}export{r as default};

@@ -1,0 +1,1 @@
+import{j as e}from"./index-BtdeMlsq.js";import{T as r}from"./Title-CTucovP5.js";import{T as t}from"./Text-DLRBVNmf.js";function o(){return e.jsxs(e.Fragment,{children:[e.jsx(r,{order:2,children:"Families"}),e.jsx(t,{mt:"sm",children:"Skeleton page"})]})}export{o as default};

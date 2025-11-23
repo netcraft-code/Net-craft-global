@@ -1,0 +1,1 @@
+import{j as t}from"./index-BtdeMlsq.js";import{T as e}from"./Title-CTucovP5.js";import{T as r}from"./Text-DLRBVNmf.js";function o(){return t.jsxs(t.Fragment,{children:[t.jsx(e,{order:2,children:"Chat"}),t.jsx(r,{mt:"sm",children:"Chat features will come in next milestones"})]})}export{o as default};
