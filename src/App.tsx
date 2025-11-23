@@ -1,5 +1,5 @@
 import '@mantine/core/styles.css';
-import '@mantine/notifications/styles.css';
+// import '@mantine/notifications/styles.css';
 import { MantineProvider } from '@mantine/core';
 import { theme } from './theme';
 import { Layout } from '@/components/Layout/Layout';
@@ -11,7 +11,7 @@ import appConfig from './configs/app.config';
 import { mockServer } from './mock/mock';
 import { ModalsProvider } from '@mantine/modals';
 import './index.css';
-import { Notifications } from '@mantine/notifications';
+// import { Notifications } from '@mantine/notifications';
 import { useState } from 'react';
 
 export default function App() {
@@ -27,12 +27,12 @@ export default function App() {
 
 
   return (
-    <MantineProvider theme={{ ...theme, colorScheme }} withGlobalStyles withNormalizeCSS>
+<MantineProvider theme={theme} forceColorScheme={colorScheme} withCssVariables withGlobalClasses>
       <ModalsProvider>
         <Provider store={store}>
           <PersistGate loading={null} persistor={persistor}>
             <BrowserRouter>
-              <Notifications />
+              {/* <Notifications /> */}
               <Layout colorScheme={colorScheme} toggleColorScheme={toggleColorScheme} />
             </BrowserRouter>
           </PersistGate>

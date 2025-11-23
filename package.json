@@ -1,8 +1,11 @@
 {
   "name": "mantine-vite-template",
   "private": true,
+  "homepage": "https://netcraft-code.github.io/Net-craft-global",
   "version": "0.0.0",
   "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist",
     "dev": "vite",
     "build": "tsc && vite build",
     "preview": "vite preview",
@@ -25,7 +28,6 @@
     "@mantine/form": "^7.7.1",
     "@mantine/hooks": "^7.7.1",
     "@mantine/modals": "^7.15.1",
-    "@mantine/notifications": "^8.2.7",
     "@mantinex/mantine-logo": "^2.0.0",
     "@reduxjs/toolkit": "^2.2.3",
     "@tabler/icons-react": "^3.35.0",

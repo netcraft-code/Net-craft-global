@@ -1,4 +1,4 @@
-import { ActionIcon, AppShell, AppShellSection, Box, Burger, Card, Group } from '@mantine/core';
+import { ActionIcon, AppShell, AppShellSection, Box, Burger, Card, Group, MantineTheme } from '@mantine/core';
 import { useDisclosure } from '@mantine/hooks';
 import navigationConfig from '@/configs/navigation.config';
 import AuthorityCheck from '@/route/AuthorityCheck';
@@ -14,8 +14,11 @@ import { IconSun, IconMoonStars } from '@tabler/icons-react';
 import Views from '@/components/Layout/Views';
 import App from '@/App';
 import CollapsibleAppShellBottomContent from '@/components/Layout/LayoutTypes/CollapsibleAppShellBottomContent';
-
-export default function CollapsibleAppShell({ colorScheme, toggleColorScheme }) {
+interface CollapsibleAppShellProps {
+  colorScheme: 'light' | 'dark';
+  toggleColorScheme: () => void;
+}
+export default function CollapsibleAppShell({ colorScheme, toggleColorScheme }: CollapsibleAppShellProps) {
   const [mobileOpened, { toggle: toggleMobile }] = useDisclosure();
   const [desktopOpened, { toggle: toggleDesktop }] = useDisclosure(true);
   const userAuthority = useAppSelector((state) => state.auth.user.role);
@@ -75,21 +78,21 @@ export default function CollapsibleAppShell({ colorScheme, toggleColorScheme }) 
   return (
     <AppShell
 
-      styles={(theme) => ({
+      styles={(theme: MantineTheme) => ({
         main: {
-          backgroundColor: theme.colorScheme === 'dark' ? theme.colors.dark[7] : theme.colors.gray[0],
-          color: theme.colorScheme === 'dark' ? theme.colors.gray[0] : theme.colors.dark[9],
-
+          backgroundColor:
+            colorScheme === 'dark' ? theme.colors.dark[7] : theme.colors.gray[0],
+          color: colorScheme === 'dark' ? theme.colors.gray[0] : theme.colors.dark[9],
         },
         header: {
-          backgroundColor: theme.colorScheme === 'dark' ? theme.colors.dark[6] : theme.white,
-          color: theme.colorScheme === 'dark' ? theme.colors.gray[0] : theme.colors.dark[9],
-
+          backgroundColor:
+            colorScheme === 'dark' ? theme.colors.dark[6] : theme.white,
+          color: colorScheme === 'dark' ? theme.colors.gray[0] : theme.colors.dark[9],
         },
         navbar: {
-          backgroundColor: theme.colorScheme === 'dark' ? theme.colors.dark[6] : theme.white,
-          color: theme.colorScheme === 'dark' ? theme.colors.gray[0] : theme.colors.dark[9],
-
+          backgroundColor:
+            colorScheme === 'dark' ? theme.colors.dark[6] : theme.white,
+          color: colorScheme === 'dark' ? theme.colors.gray[0] : theme.colors.dark[9],
         },
       })}
       header={{ height: 60 }}
@@ -106,7 +109,7 @@ export default function CollapsibleAppShell({ colorScheme, toggleColorScheme }) 
       <AppShell.Header>
         <Group h="100%" px="md">
           {/* Left side: burger + logo */}
-          <Group spacing="sm">
+          <Group>
             <Burger opened={mobileOpened} onClick={toggleMobile} hiddenFrom="sm" size="sm" />
             <Burger opened={desktopOpened} onClick={toggleDesktop} visibleFrom="sm" size="sm" />
             <div style={{ fontWeight: 'bold', fontSize: '1.2rem' }}>Net craft global</div>
@@ -131,20 +134,23 @@ export default function CollapsibleAppShell({ colorScheme, toggleColorScheme }) 
         </AppShell.Section>
       </AppShell.Navbar>
       <AppShell.Main>
-        <Box
-          sx={(theme) => ({
-            padding: '2rem',
-            backgroundColor: theme.colorScheme === 'dark' ? theme.colors.dark[7] : theme.colors.gray[0],
-            color: theme.colorScheme === 'dark' ? theme.colors.gray[0] : theme.colors.dark[9],
-            flex: 1,
-            overflow: 'hidden',
-            display: 'flex',
-            flexDirection: 'column',
-            height: '100%',
-          })}
+        <div
+          // styles={(theme:MantineTheme) => ({
+          //   root: {
+          //     padding: '2rem',
+          //     backgroundColor: colorScheme === 'dark' ? theme.colors.dark[7] : theme.colors.gray[0],
+          //     color: colorScheme === 'dark' ? theme.colors.gray[0] : theme.colors.dark[9],
+          //     flex: 1,
+          //     overflow: 'hidden',
+          //     display: 'flex',
+          //     flexDirection: 'column',
+          //     height: '100%',
+          //   },
+          // })}
         >
           <Views />
-        </Box>
+        </div>
+
       </AppShell.Main>
 
     </AppShell>

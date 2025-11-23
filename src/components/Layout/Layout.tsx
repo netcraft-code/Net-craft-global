@@ -15,7 +15,12 @@ const layouts: any = {
   [LayoutTypes.Plain]: lazy(() => import('./LayoutTypes/PlainLayout')),
 };
 
-export function Layout({ colorScheme, toggleColorScheme }) {
+interface LayoutProps {
+  colorScheme: 'light' | 'dark';
+  toggleColorScheme: () => void;
+}
+
+export function Layout({ colorScheme, toggleColorScheme }: LayoutProps) {
   const { authenticated } = useAuth();
   const layoutType = useAppSelector((state) => state.theme.currentLayout);
 
